@@ -1,0 +1,14 @@
+<nav class="navbar navbar-light bg-light justify-content-between">
+  <a class="navbar-brand">Carrito de Compras Tul</a>
+  <div class="div-inline">
+    <a routerLink="products" style="margin-right: 20px"> Productos</a>
+    <span
+      class="p-overlay-badge p-mr-4 cursor"
+      style="margin-right: 20px"
+      [routerLink]="['/cart']"
+    >
+      <i class="pi pi-shopping-cart" style="font-size: 1.45em"></i>
+      <span class="p-badge">{{ cartService.productsCart.length }}</span>
+    </span>
+  </div>
+</nav>

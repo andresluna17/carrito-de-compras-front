@@ -1,0 +1,10 @@
+.main {
+  padding: 5%;
+}
+.product {
+  display: inline-block;
+  margin: 0.3em;
+}
+.product:hover {
+  cursor: pointer;
+}

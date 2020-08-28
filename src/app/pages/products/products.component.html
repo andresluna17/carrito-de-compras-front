@@ -1,0 +1,35 @@
+<div class="">
+  <div class="product" *ngFor="let product of productsService.products">
+    <p-card
+      [header]="product.nombre"
+      subheader="descripción"
+      [style]="{ width: '25em' }"
+      styleClass="ui-card-shadow"
+      (click)="(null)"
+    >
+      <p-header>
+        <img alt="Card" [src]="product.sku" />
+      </p-header>
+      <div style="line-height: 1.5">
+        <p-scrollPanel
+          [style]="{ width: '100%', height: '100px' }"
+          styleClass="custombar1"
+        >
+          <p>{{ product.descripcion }}</p>
+        </p-scrollPanel>
+      </div>
+      <p-footer>
+        <button
+          pButton
+          pRipple
+          type="button"
+          icon="pi pi-plus"
+          label="add cart"
+          class="p-button-rounded"
+          (click)="addCart(product.id)"
+        ></button>
+      </p-footer>
+    </p-card>
+  </div>
+</div>
+<p-toast></p-toast>
