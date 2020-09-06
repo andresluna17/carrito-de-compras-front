@@ -13,7 +13,9 @@ export class CartService {
 
   async getCart() {
     await this.http
-      .get('http://localhost:8000/api/carrito-de-compras/v1/cart')
+      .get(
+        'https://laravel-carrito-de-compras.herokuapp.com/api/carrito-de-compras/v1/cart'
+      )
       .subscribe((cart) => {
         console.log(cart);
         this.id = cart['data']['id'];
@@ -29,7 +31,7 @@ export class CartService {
     };
 
     return await this.http.post(
-      'http://localhost:8000/api/carrito-de-compras/v1/add-product-cart',
+      'https://laravel-carrito-de-compras.herokuapp.com/api/carrito-de-compras/v1/add-product-cart',
       data
     );
   }
@@ -40,20 +42,20 @@ export class CartService {
     };
 
     return await this.http.patch(
-      `http://localhost:8000/api/carrito-de-compras/v1/product-cart/${id}`,
+      `https://laravel-carrito-de-compras.herokuapp.com/api/carrito-de-compras/v1/product-cart/${id}`,
       data
     );
   }
 
   async deleteProductCart(id: Number) {
     return await this.http.delete(
-      `http://localhost:8000/api/carrito-de-compras/v1/product-cart/${id}`
+      `https://laravel-carrito-de-compras.herokuapp.com/api/carrito-de-compras/v1/product-cart/${id}`
     );
   }
 
   async checkoutCart() {
     return await this.http.put(
-      `http://localhost:8000/api/carrito-de-compras/v1/checkout/${this.id}`,
+      `https://laravel-carrito-de-compras.herokuapp.com/api/carrito-de-compras/v1/checkout/${this.id}`,
       {}
     );
   }

@@ -12,7 +12,9 @@ export class ProductsService {
 
   async getProducts() {
     await this.http
-      .get('http://localhost:8000/api/carrito-de-compras/v1/products')
+      .get(
+        'https://laravel-carrito-de-compras.herokuapp.com/api/carrito-de-compras/v1/products'
+      )
       .subscribe((products) => {
         this.products = products['data'];
         console.log(products);
