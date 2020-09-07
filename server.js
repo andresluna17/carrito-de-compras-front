@@ -3,9 +3,9 @@ const path = require("path");
 
 const app = express();
 
-app.use(express.static("./dist/carrito-de-compras-fron"));
+app.use(express.static(__dirname + "/dist/carrito-de-compras-fron"));
 
-app.get("*", (req, res) =>
+app.get("/*", (req, res) =>
   res.sendFile(
     path.join(__dirname + "/dist/acarrito-de-compras-fron/index.html")
   )
